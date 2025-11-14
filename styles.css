@@ -1,0 +1,369 @@
+:root {
+    --bg: #0b0f1a;
+    --bg-alt: #101622;
+    --accent: #63ff7c;
+    --accent-soft: #2b8f45;
+    --text: #f5f5f5;
+    --muted: #9ea6c7;
+    --card: #141a26;
+    --border: #2a3245;
+    --danger: #ff4b6b;
+    --shadow-soft: 0 14px 40px rgba(0, 0, 0, 0.55);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* subtle pixel grid bg */
+.bg-grid {
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 32px 32px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* NAVBAR */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 32px;
+    background: rgba(5, 8, 15, 0.94);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(14px);
+}
+
+.navbar nav a {
+    color: var(--muted);
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 0.9rem;
+}
+
+.navbar nav a:hover {
+    color: var(--accent);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand h1 {
+    font-family: "Press Start 2P", system-ui;
+    font-size: 0.9rem;
+    margin: 0 0 4px;
+}
+
+.brand p {
+    margin: 0;
+    font-size: 0.7rem;
+    color: var(--muted);
+}
+
+/* fake cube logo until you drop real image */
+.logo-cube {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    background: conic-gradient(from 160deg,
+            #ff7dd8,
+            #ffd66b,
+            #6efff4,
+            #8b7dff,
+            #ff7dd8);
+    box-shadow: 0 0 18px rgba(111, 255, 177, 0.7);
+}
+
+/* LAYOUT */
+
+.section {
+    max-width: 1080px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.section-alt {
+    background: radial-gradient(circle at top, #182438 0, #050711 55%);
+    padding-top: 50px;
+    padding-bottom: 60px;
+    border-block: 1px solid var(--border);
+}
+
+.section-header h3 {
+    font-family: "Press Start 2P", system-ui;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.section-header p {
+    margin: 0;
+    color: var(--muted);
+}
+
+/* HERO */
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+    gap: 32px;
+    align-items: center;
+    margin-top: 32px;
+}
+
+.hero-text h2 {
+    font-size: 2rem;
+    margin-bottom: 14px;
+}
+
+.hero-text p {
+    color: var(--muted);
+    max-width: 460px;
+}
+
+.hero-text .accent {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.hero-buttons {
+    margin-top: 18px;
+    display: flex;
+    gap: 12px;
+}
+
+.tiny-note {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 12px;
+}
+
+.hero-card {
+    justify-self: flex-end;
+}
+
+.hero-card-inner {
+    padding: 20px 22px;
+    background: linear-gradient(145deg, #121924, #05070e);
+    border-radius: 14px;
+    border: 1px solid var(--accent-soft);
+    box-shadow: var(--shadow-soft);
+}
+
+.hero-card-title {
+    margin: 10px 0 4px;
+    font-size: 1.2rem;
+}
+
+.hero-card-sub {
+    margin: 0;
+    color: var(--muted);
+}
+
+.mc-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+}
+
+/* CARDS */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.card {
+    background: linear-gradient(155deg, #141b26, #080b14);
+    border-radius: 12px;
+    padding: 16px 18px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-soft);
+}
+
+.card h4 {
+    margin-top: 0;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    border: 1px solid var(--accent-soft);
+    color: var(--accent);
+    font-size: 0.7rem;
+}
+
+.price {
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+.tag-row {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.tag {
+    font-size: 0.7rem;
+    padding: 2px 7px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid #273040;
+}
+
+/* FORMS */
+
+.form-card label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+.form-card input,
+.form-card select,
+.form-card textarea {
+    width: 100%;
+    margin-top: 4px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    padding: 8px 10px;
+    background: #05070e;
+    color: var(--text);
+    font-family: inherit;
+}
+
+.form-card textarea {
+    resize: vertical;
+}
+
+.status-msg {
+    font-size: 0.8rem;
+    margin-top: 8px;
+    min-height: 1.1em;
+}
+
+.status-msg.ok {
+    color: var(--accent);
+}
+
+.status-msg.err {
+    color: var(--danger);
+}
+
+/* BUTTONS */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s;
+}
+
+.btn.primary {
+    background: linear-gradient(145deg, #34d058, #63ff7c);
+    color: #020308;
+    box-shadow: 0 10px 30px rgba(71, 238, 118, 0.55);
+}
+
+.btn.primary:hover {
+    transform: translateY(-1px);
+}
+
+.btn.ghost {
+    border-color: var(--border);
+    background: rgba(5, 9, 17, 0.8);
+    color: var(--text);
+}
+
+.btn.ghost:hover {
+    background: rgba(10, 18, 30, 0.9);
+}
+
+/* OTHER */
+
+.hint {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 14px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.footer {
+    margin-top: 30px;
+    padding: 16px;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 820px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        justify-self: stretch;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .navbar nav {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .navbar nav a {
+        margin-left: 0;
+        margin-right: 14px;
+    }
+}

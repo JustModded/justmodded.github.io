@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>JustModded | Minecraft Mods & Plugins</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Retro pixel font vibe -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+
+    <header class="navbar">
+        <div class="brand">
+            <!-- you can swap this for your cube logo later -->
+            <div class="logo-cube"></div>
+            <div>
+                <h1>JustModded Studio</h1>
+                <p>Minecraft Mods • Plugins • Setups</p>
+            </div>
+        </div>
+        <nav>
+            <a href="#hero">Home</a>
+            <a href="#commissions">Commissions</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="hero" class="section hero">
+            <div class="hero-text">
+                <h2>Minecraft Dev for Hire.</h2>
+                <p>
+                    Custom Fabric mods, plugins, and server setups.
+                    Powered by <span class="accent">JustModded</span>.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#commissions" class="btn primary">View Commissions</a>
+                    <a href="#reviews" class="btn ghost">Read Reviews</a>
+                </div>
+                <p class="tiny-note">Hosted on GitHub Pages · Data via Firebase</p>
+            </div>
+            <div class="hero-card">
+                <div class="hero-card-inner">
+                    <p class="mc-label">Now Taking Commissions</p>
+                    <p class="hero-card-title">Minecraft 1.21.4+</p>
+                    <p class="hero-card-sub">Fabric Mods • Performance • Custom Systems</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMMISSIONS -->
+        <section id="commissions" class="section">
+            <div class="section-header">
+                <h3>Commissions</h3>
+                <p>These cards are loaded live from Firebase — you can add more from the Firebase console.</p>
+            </div>
+
+            <div id="commissions-list" class="card-grid">
+                <!-- Filled by app.js -->
+            </div>
+
+            <p class="hint">
+                Want a new project listed? Add a document in the
+                <code>commissions</code> collection in Firestore. No code edits needed.
+            </p>
+        </section>
+
+        <!-- REVIEWS -->
+        <section id="reviews" class="section section-alt">
+            <div class="section-header">
+                <h3>Client Reviews</h3>
+                <p>Real feedback from people you’ve worked with.</p>
+            </div>
+
+            <div id="reviews-list" class="card-grid">
+                <!-- Filled by app.js -->
+            </div>
+
+            <form id="review-form" class="card form-card">
+                <h4>Leave a Review</h4>
+                <p class="form-help">
+                    Your review is stored in Firebase. Be nice or get yeeted 😇
+                </p>
+
+                <label>
+                    Name / Handle
+                    <input type="text" id="review-name" maxlength="40" required />
+                </label>
+
+                <label>
+                    Rating
+                    <select id="review-rating" required>
+                        <option value="5">⭐️⭐️⭐️⭐️⭐️ 5 / 5</option>
+                        <option value="4">⭐️⭐️⭐️⭐️ 4 / 5</option>
+                        <option value="3">⭐️⭐️⭐️ 3 / 5</option>
+                        <option value="2">⭐️⭐️ 2 / 5</option>
+                        <option value="1">⭐️ 1 / 5</option>
+                    </select>
+                </label>
+
+                <label>
+                    Review
+                    <textarea id="review-message" rows="4" maxlength="500" required></textarea>
+                </label>
+
+                <button class="btn primary" type="submit" id="review-submit">Submit Review</button>
+                <p id="review-status" class="status-msg"></p>
+            </form>
+
+            <p class="hint">
+                New reviews will appear automatically once they’re saved in Firestore.
+            </p>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="section">
+            <div class="section-header">
+                <h3>Contact</h3>
+                <p>Best way to reach me for commissions & collabs.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="card">
+                    <h4>Discord</h4>
+                    <p><strong>@JustModded</strong></p>
+                </div>
+                <div class="card">
+                    <h4>BuiltByBit</h4>
+                    <p>Link your BBB profile here later.</p>
+                </div>
+                <div class="card">
+                    <h4>GitHub</h4>
+                    <p><a href="https://github.com/justmodded" target="_blank">github.com/justmodded</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="year"></span> JustModded Studio · Minecraft-themed portfolio.</p>
+    </footer>
+
+    <!-- Main app logic -->
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
