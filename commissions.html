@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Commissions | JustModded Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="cube.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="bg-grid"></div>
+
+    <header class="navbar">
+        <div class="brand">
+            <img src="cube.png" class="logo-img" alt="JustModded Logo" />
+            <div>
+                <h1>JustModded Studio</h1>
+                <p>Minecraft Mods • Plugins • Setups</p>
+            </div>
+        </div>
+        <nav>
+            <a href="index.html#hero">Home</a>
+            <a class="active" href="commissions.html">Commissions</a>
+            <a href="index.html#reviews">Reviews</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="section-header">
+                <h2>Available Commissions</h2>
+                <p>These projects load live from Firebase. Add or update them anytime in Firestore.</p>
+            </div>
+
+            <div id="commissions-list" class="card-grid"></div>
+
+            <p class="hint">
+                Don’t see your commission? Add one in Firestore → <code>commissions</code> collection.
+            </p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© <span id="year"></span> JustModded Studio · Minecraft-themed portfolio.</p>
+    </footer>
+
+    <!-- Only load the commissions script on this page -->
+    <script type="module" src="commissions.js"></script>
+</body>
+
+</html>
