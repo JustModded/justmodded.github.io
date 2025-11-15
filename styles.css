@@ -97,6 +97,15 @@ body {
     box-shadow: 0 0 18px rgba(111, 255, 177, 0.7);
 }
 
+.logo-img {
+    width: 42px;
+    height: 42px;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+
 /* LAYOUT */
 
 .section {
