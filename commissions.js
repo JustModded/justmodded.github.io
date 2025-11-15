@@ -27,8 +27,20 @@ const yearSpan = document.getElementById("year");
 if (yearSpan) yearSpan.textContent = new Date().getFullYear();
 
 // Sanitizer
-const safe = (str) =>
-    str ? str.replace(/[&<>"']/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m])) : "";
+const safe = (value) => {
+    if (typeof value === "string") {
+        return value.replace(/[&<>"']/g, (m) => ({
+            "&": "&amp;",
+            "<": "&lt;",
+            ">": "&gt;",
+            '"': "&quot;",
+            "'": "&#39;",
+        })[m]);
+    }
+    if (value === null || value === undefined) return "";
+    return String(value);
+};
+
 
 // Load commissions
 async function loadCommissions() {
