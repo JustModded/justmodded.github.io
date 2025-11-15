@@ -1,7 +1,6 @@
 // app.js
 // NOTE: you'll need to replace firebaseConfig with your actual config from Firebase console
 
-import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-app.js";
 import {
     getFirestore,
@@ -26,7 +25,6 @@ const firebaseConfig = {
 
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
 // DOM refs
