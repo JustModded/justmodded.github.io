@@ -18,7 +18,7 @@ const firebaseConfig = {
     apiKey: "AIzaSyDfszthJgcrv4knmUTCiUBfD0MCQC8ea9I",
     authDomain: "justmodded-portfolio.firebaseapp.com",
     projectId: "justmodded-portfolio",
-    storageBucket: "justmodded-portfolio.firebasestorage.app",
+    storageBucket: "justmodded-portfolio.appspot.com",
     messagingSenderId: "556379934616",
     appId: "1:556379934616:web:21ff43963b0da4a24d25ed",
     measurementId: "G-3HYKSN6F67"
