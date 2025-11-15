@@ -15,14 +15,15 @@ import {
 
 // TODO: replace this with your own config from Firebase project settings
 const firebaseConfig = {
-    apiKey: "AIzaSyDfszthJgcrv4knmUTCiUBfD0MCQC8ea9I",
+    apiKey: "AIzaSyDf_szthJgcr4kmnUTClu8FD0MCQcBea9I",
     authDomain: "justmodded-portfolio.firebaseapp.com",
     projectId: "justmodded-portfolio",
-    storageBucket: "justmodded-portfolio.appspot.com",
+    storageBucket: "justmodded-portfolio.firebasestorage.app",
     messagingSenderId: "556379934616",
     appId: "1:556379934616:web:21ff43963b0da4a24d25ed",
     measurementId: "G-3HYKSN6F67"
 };
+
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
